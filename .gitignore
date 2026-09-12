@@ -1,0 +1,17 @@
+# Secrets never enter this repository.
+.secrets/
+*.env
+.env
+.env.*
+
+# Client documents never live in the workspace. Refer to them by file name or storage link only.
+*.pdf
+*.jpg
+*.jpeg
+*.png
+*.heic
+*.doc
+*.docx
+*.xls
+*.xlsx
+*.csv

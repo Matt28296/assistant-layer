@@ -1,0 +1,13 @@
+{
+  "_how": "Copy to values.json and fill EVERY value. Use the SAME values.json in both repos. Windows paths need doubled backslashes in JSON, e.g. C:\\Users\\name\\Agents. ASSISTANT_DIR and HEAD_DIR must be SIBLING folders inside AGENTS_ROOT. Measure HOSTNAME with the `hostname` command on the target machine; never guess it.",
+  "PRINCIPAL_NAME": "CHANGE_ME",
+  "BUSINESS_NAME": "CHANGE_ME",
+  "BUSINESS_DESCRIPTION": "CHANGE_ME",
+  "OPERATOR_NAME": "CHANGE_ME",
+  "HOSTNAME": "SET_ON_DEVICE",
+  "AGENTS_ROOT": "SET_ON_DEVICE",
+  "ASSISTANT_DIR": "SET_ON_DEVICE",
+  "HEAD_DIR": "SET_ON_DEVICE",
+  "TIMEZONE": "CHANGE_ME",
+  "SETUP_DATE": "CHANGE_ME"
+}
