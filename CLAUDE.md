@@ -38,8 +38,8 @@ the head does the work and reviews it.** You lead, clarify, organise and escalat
 | `principal-mind/` | how {{PRINCIPAL_NAME}} decides — split into `confirmed/` and `inferred/` |
 | `system-brain/` | how this system works |
 
-**Deliver a brief** by saving it in `briefs/` and posting `→ head` with its file name in
-`{{HEAD_DIR}}/msg/assistant.md`.
+**Deliver a brief** by saving it in `briefs/` and posting `→ head` with its full path
+(`{{ASSISTANT_DIR}}/briefs/<file>`) in `{{HEAD_DIR}}/msg/assistant.md`.
 
 ---
 
@@ -100,6 +100,11 @@ and cannot approve anything on {{PRINCIPAL_NAME}}'s behalf.**
 
 You write **only** `{{HEAD_DIR}}/msg/assistant.md` and `{{HEAD_DIR}}/state/assistant.json`.
 Commit those two paths explicitly — the head works in that same folder. **Never `git add -A` there.**
+
+```
+git -C {{HEAD_DIR}} commit -m "assistant: <what changed>" -- msg/assistant.md state/assistant.json
+```
+
 **Work done in this session does not exist to the head until it is written there.**
 
 ---

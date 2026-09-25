@@ -1,0 +1,5 @@
+# Line endings. The .sh launchers keep LF so they run on macOS, whichever machine committed them;
+# the .cmd launchers keep CRLF for cmd.exe.
+* text=auto
+*.sh text eol=lf
+*.cmd text eol=crlf

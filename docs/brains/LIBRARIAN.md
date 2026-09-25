@@ -4,6 +4,8 @@ A daily job per vault. It does **not** write conclusions into the vault; it prop
 republishes. An automated process that edits a knowledge base directly produces a knowledge base
 nobody trusts.
 
+> **In this template it is a pattern only.** No librarian job or link census ships here.
+
 ---
 
 ## What a pass does

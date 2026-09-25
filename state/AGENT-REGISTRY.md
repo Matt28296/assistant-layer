@@ -12,8 +12,8 @@
 | assistant | — | no | `UNVERIFIED` | — |
 | head | — | no | `UNVERIFIED` | — |
 
-**Both start UNVERIFIED.** They move to `VERIFIED-ACTIVE` only after the setup round-trip test in
-`SETUP.md`, step 8.
+**Both start UNVERIFIED.** After the setup round-trip test in `SETUP.md`, step 8, they move to
+`ATTENDED`: both are attended sessions with no declared cadence, so `VERIFIED-ACTIVE` does not apply.
 
 ## Status values
 
