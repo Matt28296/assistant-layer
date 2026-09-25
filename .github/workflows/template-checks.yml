@@ -1,0 +1,41 @@
+# Offline checks for the placeholder filler and the templates it fills: tests/test-fill-placeholders.ps1
+# on Windows PowerShell 5.1, PowerShell 7 on Windows, and PowerShell 7 on macOS, plus the check that the
+# files shared with the companion repository are still identical.
+#
+# They run in the public template only. A private copy made with "Use this template" has been filled,
+# and these checks are for the unfilled templates.
+name: template checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  filler:
+    if: github.repository == 'Matt28296/assistant-layer'
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { os: windows-latest, shell: powershell }
+          - { os: windows-latest, shell: pwsh }
+          - { os: macos-latest, shell: pwsh }
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: ${{ matrix.shell }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: self
+      - name: Check out the companion template
+        uses: actions/checkout@v4
+        with:
+          repository: Matt28296/head-orchestrator
+          path: companion
+      - name: Filler tests, placeholder coverage, shared files
+        run: ./self/tests/test-fill-placeholders.ps1 -Companion ./companion
