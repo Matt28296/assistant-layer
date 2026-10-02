@@ -5,19 +5,21 @@ files with a time of measurement.
 
 ## Chain of command
 
-{{PRINCIPAL_NAME}} → **assistant** (`{{ASSISTANT_DIR}}`) → **head** (`{{HEAD_DIR}}`) → work.
+{{PRINCIPAL_NAME}} → **assistant** (`{{ASSISTANT_DIR}}`) → **head** (`{{HEAD_DIR}}`) → **division orchestrators** → **workers**.
 
 - The assistant clarifies, organises and writes briefs.
-- The head does the work, reviews it, and keeps it moving.
+- The Head delegates to division orchestrators, accepts verified results, and keeps delivery moving.
+- Division orchestrators direct workers; workers produce and verify deliverables.
+- Neither top seat performs production work. See `docs/NETWORK-CONTRACT.md`.
 - **{{OPERATOR_NAME}}** supports the setup and is not in the chain of authority.
 
 ## Seats
 
-`{{HEAD_DIR}}/IDENTITY.md` is the authority. Do not copy the table here.
+`{{ASSISTANT_BUS_DIR}}/IDENTITY.md` is the authority. Do not copy the table here.
 
 ## Bus
 
-`{{HEAD_DIR}}` — `msg/<seat>.md` (append-only) + `state/<seat>.json` (overwrite).
+`{{ASSISTANT_BUS_DIR}}` — your exclusive checkout of the selected coordination remote — `msg/<seat>.md` (append-only) + `state/<seat>.json` (overwrite).
 **Read state files for summaries; logs are archives.** Commit your own paths every turn.
 
 ## Hard lines

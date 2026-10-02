@@ -142,5 +142,5 @@ rather than at the end of a stalled hour.
   recommended default.
 
 A register of items only the human can clear is kept in one place and read on every reporting cycle,
-with the age of each entry shown. **Any seat may add; every seat must remove its own entry the moment
-it clears.** Padding that list is how it stops being read.
+with the age of each entry shown. **Any seat may report an item or its resolution through its own log; the Head updates the central
+register promptly and records the reporting seat.** Padding that list is how it stops being read.

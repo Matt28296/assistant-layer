@@ -10,7 +10,7 @@ operation's private state.
 
 | Vault | Owns | Answers |
 |---|---|---|
-| **principal-mind** | the orchestrator | *How does the principal decide?* Objectives in their own words, priority rules, hard lines, heuristics, defaults by decision type, communication style |
+| **principal-mind** | Assistant edits the canonical vault; Head owns operational model quality | *How does the principal decide?* Objectives in their own words, priority rules, hard lines, heuristics, defaults by decision type, communication style |
 | **system-brain** | the delegated-authority seat | *How does the system work?* Chain of command, seats, bus, gates, per-division state, open structural items |
 
 They are separate because they go stale for **different reasons and at different rates**. How someone
@@ -90,3 +90,9 @@ supersedes it explicitly and **the old one stays**, marked.
 A corrected-in-place vault loses the thing that makes it valuable: *why* the earlier conclusion was
 reached, and what evidence changed it. That reasoning is what stops the same wrong conclusion being
 re-derived in six weeks.
+
+## Head access and learning
+
+See `../HEAD-LEARNING.md` for the capture, correction, confirmation and evaluation loop. The Head reads
+`{{PRINCIPAL_MIND_DIR}}/core.md` and `MAP.md`; it proposes changes through its own bus log.
+There is one canonical vault, not one editable copy per seat.

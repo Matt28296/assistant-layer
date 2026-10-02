@@ -12,8 +12,8 @@
 | assistant | — | no | `UNVERIFIED` | — |
 | head | — | no | `UNVERIFIED` | — |
 
-**Both start UNVERIFIED.** They move to `VERIFIED-ACTIVE` only after the setup round-trip test in
-`SETUP.md`, step 8.
+**Both start UNVERIFIED.** A proven manual round trip makes them `ATTENDED`. They move to `VERIFIED-ACTIVE`
+only with a measured autonomous cadence and fresh heartbeat as well; see `SETUP.md`, step 8.
 
 ## Status values
 

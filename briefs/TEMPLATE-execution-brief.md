@@ -44,3 +44,8 @@ _Questions not yet answered, each with a recommended default and whether that de
 ## Report back
 _Where (`msg/head.md`), how often, and what each report must contain: shipped · checked · blocked ·
 honest remainder._
+
+## Delegation and receipt
+Head assigns divisions; division orchestrators assign workers. Neither top seat performs production.
+Provide an accessible brief reference and commit revision; Head acknowledges that revision. Include
+resource limits, milestones and exception triggers without prescribing worker-level implementation.

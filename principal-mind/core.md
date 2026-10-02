@@ -32,3 +32,8 @@
 ## How {{PRINCIPAL_NAME}} likes to be spoken to
 
 - _vocabulary, length, tone, what to avoid_ `[source]`
+
+## Ownership and consumption
+Assistant edits this canonical vault. Head reads it via PRINCIPAL_MIND_DIR and proposes operational
+learning updates through its own bus log. Follow `docs/HEAD-LEARNING.md`; confirmed preferences never
+expand authority. Keep the core to one page and move detailed evidence to indexed notes.

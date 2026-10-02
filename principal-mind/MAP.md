@@ -10,3 +10,6 @@
 | Inferred | `principal-mind/inferred/` | conclusions drawn from behaviour — not yet confirmed |
 
 _Add a row for every new note, the same day._
+
+Learning protocol: `docs/HEAD-LEARNING.md` in the Assistant repository. Head decision records remain
+in the private Head workspace and link back to the source revision used.

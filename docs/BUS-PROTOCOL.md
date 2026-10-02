@@ -122,3 +122,9 @@ readers to skim, and the post that matters then arrives into a habit of skimming
 
 **Anti-flood rule:** do not repeat a finding unless it has *materially changed* — a doubled elapsed
 time, a new cause, a new owner. Name the threshold you used, so "I already said that" is checkable.
+
+## Deployment binding
+
+`DEPLOYMENT.md` defines the authoritative remote and separate per-seat checkouts. The Head owns the
+central blocked register; subordinates report changes through their own logs. Brief and result links
+must include accessible paths and revisions. Follow `NETWORK-CONTRACT.md` for routing and role limits.

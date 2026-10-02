@@ -17,7 +17,7 @@ WHERE          {{HOSTNAME}}  {{ASSISTANT_DIR}}
 CLASS          attended session
 BRING IT BACK  double-click {{ASSISTANT_DIR}}/tools/launch-assistant.cmd   (Mac: launch-assistant.sh)
 WHO            anyone at the machine
-CONFIRM IT     it passes its identity check, and writes a new line in {{HEAD_DIR}}/msg/assistant.md
+CONFIRM IT     it passes its identity check, and writes a new line in {{ASSISTANT_BUS_DIR}}/msg/assistant.md
 STATE          measure it; write the time
 RESUME POINT   read HANDOFF.md, then state/WORLD-MODEL.md
 ```
@@ -29,9 +29,9 @@ WHERE          {{HOSTNAME}}  {{HEAD_DIR}}
 CLASS          attended session
 BRING IT BACK  double-click {{HEAD_DIR}}/tools/launch-head.cmd   (Mac: launch-head.sh)
 WHO            anyone at the machine
-CONFIRM IT     it passes its identity check, and writes a new line in {{HEAD_DIR}}/msg/head.md
+CONFIRM IT     it passes its identity check, and writes a new line in {{HEAD_BUS_DIR}}/msg/head.md
 STATE          measure it; write the time
-RESUME POINT   read state/head.json current_work, then the newest → head entry in msg/assistant.md
+RESUME POINT   read state/head.json and bounded new msg/assistant.md entries in HEAD_BUS_DIR; then the canonical decision model
 ```
 
 ---

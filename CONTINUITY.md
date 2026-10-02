@@ -18,10 +18,13 @@ The principles behind it are in `docs/CONTINUITY.md`.
 | What | Where | Verified on the remote? |
 |---|---|---|
 | assistant workspace | _{{PRINCIPAL_NAME}}'s private repository URL_ | _date + how_ |
-| head / bus | _{{PRINCIPAL_NAME}}'s private repository URL_ | _date + how_ |
+| head workspace | _{{PRINCIPAL_NAME}}'s private repository URL_ | _date + how_ |
 
 **A repository with no remote is backed up nowhere.** Check with `git remote -v` — never assume.
 
 ## Single points of failure
 
 - _List them. The dangerous ones are the ones that look covered._
+
+Record the selected coordination remote and both exclusive bus checkouts, plus the Head's decision
+model source/snapshot revision. See `docs/DEPLOYMENT.md`; bus sync is not proof an agent is running.

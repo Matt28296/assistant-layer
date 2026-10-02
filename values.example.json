@@ -1,5 +1,5 @@
 {
-  "_how": "Copy to values.json and fill EVERY value. Use the SAME values.json in both repos. Windows paths need doubled backslashes in JSON, e.g. C:\\Users\\name\\Agents. ASSISTANT_DIR and HEAD_DIR must be SIBLING folders inside AGENTS_ROOT. Measure HOSTNAME with the `hostname` command on the target machine; never guess it.",
+  "_how": "Fill every value using measured deployment paths. Use matching values in both templates; ASSISTANT_BUS_DIR and HEAD_BUS_DIR are DIFFERENT exclusive checkouts of the SAME coordination remote. PRINCIPAL_MIND_DIR is the Head-readable canonical vault or a versioned read-only snapshot. See docs/DEPLOYMENT.md. Keep all agent launch directories separate, never nested.",
   "PRINCIPAL_NAME": "CHANGE_ME",
   "BUSINESS_NAME": "CHANGE_ME",
   "BUSINESS_DESCRIPTION": "CHANGE_ME",
@@ -9,5 +9,8 @@
   "ASSISTANT_DIR": "SET_ON_DEVICE",
   "HEAD_DIR": "SET_ON_DEVICE",
   "TIMEZONE": "CHANGE_ME",
-  "SETUP_DATE": "CHANGE_ME"
+  "SETUP_DATE": "CHANGE_ME",
+  "ASSISTANT_BUS_DIR": "SET_ON_DEVICE",
+  "HEAD_BUS_DIR": "SET_ON_DEVICE",
+  "PRINCIPAL_MIND_DIR": "SET_ON_DEVICE"
 }

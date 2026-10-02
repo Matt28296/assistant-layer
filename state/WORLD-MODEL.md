@@ -26,7 +26,7 @@ _In {{PRINCIPAL_NAME}}'s own words, quoted, with the date. Copy from `principal-
 
 ## Waiting on {{PRINCIPAL_NAME}}
 
-_Ranked by what it costs to leave waiting. Mirror `{{HEAD_DIR}}/state/blocked_on_principal.json`._
+_Ranked by what it costs to leave waiting. Mirror `{{ASSISTANT_BUS_DIR}}/state/blocked_on_principal.json`._
 
 ## Delegated to the head
 

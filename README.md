@@ -5,7 +5,8 @@ person, works out what they actually want, keeps track of everything in motion, 
 to a head orchestrator as written briefs.
 
 It is one half of a pair. The other half is
-**the companion `head-orchestrator` template**, which is also the shared bus.
+**the companion `head-orchestrator` template**. Select one coordination remote with
+`docs/DEPLOYMENT.md`; each seat uses its own checkout.
 
 **→ Start with [SETUP.md](SETUP.md).**
 

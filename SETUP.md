@@ -58,13 +58,26 @@ git clone <private head repo URL> head
 
 **Put NO `CLAUDE.md` in `<AGENTS_ROOT>` itself.** Claude Code loads it into every session below.
 
+## 3a. Bind the coordination bus
+
+Read `docs/DEPLOYMENT.md`. Choose the existing fleet bus for an existing network; do not create a
+competing bus. For a new installation, the private Head remote can be the bus.
+
+Clone the chosen remote into a separate Assistant-owned bus checkout. The Head uses its own exclusive
+checkout (the head workspace itself is allowed when its remote is the chosen bus). Record these as
+ASSISTANT_BUS_DIR and HEAD_BUS_DIR. Never have both sessions write one working copy.
+Initialize a new bus with the template msg/state/identity skeleton; preserve all existing data when
+using an established bus. Register measured identities in that bus before launch.
+
 ## 4. Measure — never guess
 
 ```
 hostname
 ```
 
-Record the exact output, and the exact full paths of `assistant\` and `head\`.
+Record the exact output, both launch paths, both exclusive bus checkout paths and the Head-readable
+PRINCIPAL_MIND_DIR. This setup guide assumes the top seats share a host; multi-host deployments must
+bind each seat to its measured host and supply a versioned read-only decision-model snapshot.
 
 ## 5. Fill the placeholders
 
@@ -90,6 +103,8 @@ it names and run it again. Do not continue on a non-OK result.
   **Mark every line `[confirmed date]` or `[inferred]`.** Only the principal's own words are confirmed.
 - `assistant\system-brain\core.md` — the tools table and the work stage by stage.
 - `assistant\principal-mind\REVIEW-QUEUE.md` — every inference, for the principal to tick.
+- Set PRINCIPAL_MIND_DIR to the Head-readable canonical vault or a versioned read-only snapshot.
+  Follow `docs/HEAD-LEARNING.md`; the Assistant remains the editor and the Head proposes corrections.
 
 ## 7. First launch
 
@@ -99,12 +114,13 @@ it names and run it again. Do not continue on a non-OK result.
 
 **Mac:** run `chmod +x head/tools/launch-head.sh assistant/tools/launch-assistant.sh` once, then start each seat with its `.sh` file.
 
-## 8. Round-trip test — the only proof both seats work
+## 8. Round-trip test — prove transport and identity
 
-1. In the assistant: *"Post a `→ head` ping in the bus asking the head to confirm its identity check."*
-2. In the head: *"Read msg/assistant.md and answer the newest `→ head` entry."*
-3. Confirm **both entries exist in the files**, then mark both seats `VERIFIED-ACTIVE` in
-   `assistant\state\AGENT-REGISTRY.md` **with the time**.
+1. Assistant posts a `→ head` ping from ASSISTANT_BUS_DIR, commits, pushes and verifies the remote.
+2. Head synchronizes HEAD_BUS_DIR, reads the ping, answers in its own log, commits and pushes.
+3. Assistant synchronizes its own checkout and confirms the reply and identities with timestamps.
+4. Mark manually launched seats ATTENDED. VERIFIED-ACTIVE additionally requires a declared,
+   measured autonomous cadence and a fresh heartbeat; a ping alone does not prove autonomy.
 
 ## 9. Push and verify
 
@@ -119,8 +135,10 @@ Record each connection in `CONTINUITY.md`.
 
 ## 11. Hand over the first brief
 
-Save it in `assistant\briefs\`, post `→ head` in `head\msg\assistant.md`, and watch for the head's
-acknowledgement in `head\msg\head.md`.
+Save it in `assistant\briefs\`, commit and publish to the private Assistant remote. Post its accessible
+path and revision through ASSISTANT_BUS_DIR/msg/assistant.md. Synchronize and verify the Head's
+acknowledgement in your own bus checkout. Register and validate a real division and worker before
+production dispatch; see the end-to-end acceptance exercise in `docs/DEPLOYMENT.md`.
 
 ---
 
@@ -130,4 +148,4 @@ acknowledgement in `head\msg\head.md`.
 - Put a `CLAUDE.md` in the folder above both seats.
 - Sign in, type a password, or read out a code for the principal.
 - Commit client documents, bank details or passwords to either repository.
-- Mark a seat active before step 8 has passed.
+- Mark a seat VERIFIED-ACTIVE without both a round trip and measured autonomous cadence.
